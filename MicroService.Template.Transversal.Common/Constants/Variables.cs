@@ -2,6 +2,6 @@
 {
     public static class Variables
     {
-        public const string CONNECTION_STRING_NAME = "SQL_connection"; 
+        public const string CONNECTION_STRING_NAME = "ConnectionStrings:SQL_connection"; 
     }
 }

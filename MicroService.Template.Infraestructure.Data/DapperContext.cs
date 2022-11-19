@@ -13,7 +13,7 @@ namespace MicroService.Template.Infraestructure.Data
         public DapperContext(IConfiguration configuration)
         {
             _configuration = configuration;
-            _connectionString = configuration.GetConnectionString(Variables.CONNECTION_STRING_NAME);
+            _connectionString = configuration[Variables.CONNECTION_STRING_NAME];
         }
 
         public IDbConnection CreateConnection() => new SqlConnection(_connectionString);
