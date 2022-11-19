@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MicroService.Template.Infraestructure.Data\MicroService.Template.Infraestructure.Data.csproj" />
+    <ProjectReference Include="..\MicroService.Template.Infraestructure.Interface\MicroService.Template.Infraestructure.Interface.csproj" />
+    <ProjectReference Include="..\MicroService.Template.Transversal.Common\MicroService.Template.Transversal.Common.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "MicroService.Template.Infraestructure.Repositories": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:49247;http://localhost:49256"
+    }
+  }
+}

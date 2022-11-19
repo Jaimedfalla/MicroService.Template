@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "MicroService.Template.Application.Validator": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:49267;http://localhost:49268"
+    }
+  }
+}
