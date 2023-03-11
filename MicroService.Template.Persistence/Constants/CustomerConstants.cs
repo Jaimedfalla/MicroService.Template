@@ -1,4 +1,4 @@
-﻿namespace MicroService.Template.Persistence.Repositories.Constants
+﻿namespace MicroService.Template.Persistence.Constants
 {
     internal static class CustomerConstants
     {

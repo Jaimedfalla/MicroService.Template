@@ -8,7 +8,7 @@ using MicroService.Template.Transversal.Common;
 using System;
 using MicroService.Template.Transversal.Common.Constants;
 
-namespace MicroService.Template.Application.Main
+namespace MicroService.Template.Application.Main.Users
 {
     internal class UserApplication:IUserApplication
     {

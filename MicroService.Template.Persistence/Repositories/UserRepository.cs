@@ -1,6 +1,6 @@
 ﻿using Dapper;
 using MicroService.Template.Domain.Entities;
-using MicroService.Template.Persistence.Data;
+using MicroService.Template.Persistence.Context;
 using MicroService.Template.Application.Interface.Persistence;
 using System.Data;
 
@@ -15,7 +15,7 @@ namespace MicroService.Template.Persistence.Repositories
             _context = context;
         }
 
-        public Users Authenticate(string userName, string password)
+        public User Authenticate(string userName, string password)
         {
             using var connection = _context.CreateConnection();
             string query = "UsersGetByUserAndPassword";
@@ -25,7 +25,7 @@ namespace MicroService.Template.Persistence.Repositories
                 Password = password
             };
 
-            var user = connection.QuerySingle<Users>(query, parameters,commandType: CommandType.StoredProcedure);
+            var user = connection.QuerySingle<User>(query, parameters,commandType: CommandType.StoredProcedure);
 
             return user;
         }

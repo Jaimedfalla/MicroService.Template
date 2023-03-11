@@ -10,7 +10,7 @@ using System;
 using System.Linq;
 using MicroService.Template.Transversal.Common.Constants;
 
-namespace MicroService.Template.Application.Main
+namespace MicroService.Template.Application.Main.Customers
 {
     internal class CustomerApplication:ICustomerApplication
     {

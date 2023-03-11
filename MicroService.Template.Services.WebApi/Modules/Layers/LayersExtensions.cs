@@ -1,5 +1,5 @@
 ﻿using MicroService.Template.Application.Main;
-using MicroService.Template.Persistence.Repositories;
+using MicroService.Template.Persistence;
 using MicroService.Template.Services.WebApi.Modules.Validator;
 using MicroService.Template.Transversal.Mapper;
 

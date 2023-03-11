@@ -4,6 +4,6 @@ namespace MicroService.Template.Application.Interface.Persistence
 {
     public interface IUserRepository
     {
-        Users Authenticate(string userName, string password);
+        User Authenticate(string userName, string password);
     }
 }

@@ -9,7 +9,7 @@ namespace MicroService.Template.Transversal.Mapper
         public MappingProfile()
         {
             CreateMap<Customer, CustomerDTO>().ReverseMap();
-            CreateMap<Users, UserDTO>().ReverseMap();
+            CreateMap<User, UserDTO>().ReverseMap();
         }
     }
 }

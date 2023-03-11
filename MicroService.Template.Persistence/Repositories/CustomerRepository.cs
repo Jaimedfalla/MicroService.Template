@@ -1,8 +1,8 @@
 ﻿using Dapper;
 using MicroService.Template.Domain.Entities;
-using MicroService.Template.Persistence.Data;
+using MicroService.Template.Persistence.Context;
 using MicroService.Template.Application.Interface.Persistence;
-using MicroService.Template.Persistence.Repositories.Constants;
+using MicroService.Template.Persistence.Constants;
 using System;
 using System.Collections.Generic;
 using System.Data;
