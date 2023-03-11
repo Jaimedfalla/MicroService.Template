@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using MicroService.Template.Application.DTO;
-using MicroService.Template.Application.Interface;
+using MicroService.Template.Application.Interface.UseCases;
 using MicroService.Template.Domain.Entities;
-using MicroService.Template.Domain.Interface;
+using MicroService.Template.Application.Interface.Persistence;
 using MicroService.Template.Transversal.Common;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -15,13 +15,13 @@ namespace MicroService.Template.Application.Main
     internal class CustomerApplication:ICustomerApplication
     {
         private readonly IMapper _mapper;
-        private readonly ICustomerDomain _customerDomain;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IAppLogger<CustomerApplication> _logger;
 
-        public CustomerApplication(IMapper mapper, ICustomerDomain customerDomain,IAppLogger<CustomerApplication> logger)
+        public CustomerApplication(IMapper mapper, IUnitOfWork unitOfWork,IAppLogger<CustomerApplication> logger)
         {
             _mapper = mapper;
-            _customerDomain = customerDomain;
+            _unitOfWork = unitOfWork;
             _logger = logger;
         }
 
@@ -30,7 +30,7 @@ namespace MicroService.Template.Application.Main
             Response<bool> response = new Response<bool>();
             try {
                 Customer customer = _mapper.Map<Customer>(customerDto);
-                response.Data = _customerDomain.Add(customer);
+                response.Data = _unitOfWork.Customers.Add(customer);
                 response.IsSuccess = true;
                 response.Message = string.Format(Messages.SUCCESS,nameof(Add));
             }
@@ -46,7 +46,7 @@ namespace MicroService.Template.Application.Main
             try
             {
                 Customer customer = _mapper.Map<Customer>(customerDto);
-                response.Data = await _customerDomain.AddAsync(customer);
+                response.Data = await _unitOfWork.Customers.AddAsync(customer);
                 response.IsSuccess = true;
                 response.Message = string.Format(Messages.SUCCESS, nameof(Add));
             }
@@ -62,7 +62,7 @@ namespace MicroService.Template.Application.Main
             Response<bool> response = new Response<bool>();
             try
             {
-                response.Data = _customerDomain.Delete(customerId);
+                response.Data = _unitOfWork.Customers.Delete(customerId);
                 response.IsSuccess = true;
                 response.Message = string.Format(Messages.SUCCESS, $"{nameof(Delete)}ed");
             }
@@ -78,7 +78,7 @@ namespace MicroService.Template.Application.Main
             Response<bool> response = new Response<bool>();
             try
             {
-                response.Data = await _customerDomain.DeleteAsync(customerId);
+                response.Data = await _unitOfWork.Customers.DeleteAsync(customerId);
                 response.IsSuccess = true;
                 response.Message = string.Format(Messages.SUCCESS, $"{nameof(Delete)}ed");
             }
@@ -94,7 +94,7 @@ namespace MicroService.Template.Application.Main
             Response<IEnumerable<CustomerDTO>> response = new Response<IEnumerable<CustomerDTO>>();
             try
             {
-                var customers = _customerDomain.GetAll();
+                var customers = _unitOfWork.Customers.GetAll();
                 response.Data = _mapper.Map<IEnumerable<CustomerDTO>>(customers);
                 response.IsSuccess = response.Data.Any();
                 response.Message = Messages.RETRIEVED;
@@ -114,7 +114,7 @@ namespace MicroService.Template.Application.Main
             Response<IEnumerable<CustomerDTO>> response = new Response<IEnumerable<CustomerDTO>>();
             try
             {
-                var customers = await _customerDomain.GetAllAsync();
+                var customers = await _unitOfWork.Customers.GetAllAsync();
                 response.Data = _mapper.Map<IEnumerable<CustomerDTO>>(customers);
                 response.IsSuccess = response.Data.Any();
                 response.Message = Messages.RETRIEVED;
@@ -128,13 +128,13 @@ namespace MicroService.Template.Application.Main
         }
         public ResponsePagination<IEnumerable<CustomerDTO>> GetAllWithPagination(int numberPage, int pageSize)
         {
-            var data = _customerDomain.GetAllWithPagination(numberPage, pageSize);
+            var data = _unitOfWork.Customers.GetAllWithPagination(numberPage, pageSize);
             return PaginateData(data,numberPage,pageSize);
         }
             
         public async Task<ResponsePagination<IEnumerable<CustomerDTO>>> GetAllWithPaginationAsync(int numberPage, int pageSize)
         {
-            var data = await _customerDomain.GetAllWithPaginationAsync(numberPage, pageSize);
+            var data = await _unitOfWork.Customers.GetAllWithPaginationAsync(numberPage, pageSize);
             return PaginateData(data, numberPage, pageSize);
         }
         public Response<CustomerDTO> GetCustomer(string customerId)
@@ -142,7 +142,7 @@ namespace MicroService.Template.Application.Main
             Response<CustomerDTO> response = new Response<CustomerDTO>();
             try
             {
-                var customers = _customerDomain.GetCustomer(customerId);
+                var customers = _unitOfWork.Customers.GetCustomer(customerId);
                 response.Data = _mapper.Map<CustomerDTO>(customers);
                 response.IsSuccess = response.Data !=null;
                 response.Message = Messages.RETRIEVED;
@@ -159,7 +159,7 @@ namespace MicroService.Template.Application.Main
             Response<CustomerDTO> response = new Response<CustomerDTO>();
             try
             {
-                var customers = await _customerDomain.GetCustomerAsync(customerId);
+                var customers = await _unitOfWork.Customers.GetCustomerAsync(customerId);
                 response.Data = _mapper.Map<CustomerDTO>(customers);
                 response.IsSuccess = response.Data != null;
                 response.Message = Messages.RETRIEVED;
@@ -177,7 +177,7 @@ namespace MicroService.Template.Application.Main
             try
             {
                 var customer = _mapper.Map<Customer>(customerDto);
-                response.Data = _customerDomain.Update(customer);
+                response.Data = _unitOfWork.Customers.Update(customer);
                 response.IsSuccess = true;
                 response.Message = string.Format(Messages.SUCCESS, $"{nameof(Update)}ed");
             }
@@ -194,7 +194,7 @@ namespace MicroService.Template.Application.Main
             try
             {
                 var customer = _mapper.Map<Customer>(customerDto);
-                response.Data = await _customerDomain.UpdateAsync(customer);
+                response.Data = await _unitOfWork.Customers.UpdateAsync(customer);
                 response.IsSuccess = true;
                 response.Message = string.Format(Messages.SUCCESS, $"{nameof(Update)}ed");
             }
@@ -210,7 +210,7 @@ namespace MicroService.Template.Application.Main
             ResponsePagination<IEnumerable<CustomerDTO>> response = new ResponsePagination<IEnumerable<CustomerDTO>>();
             try
             {
-                int count = _customerDomain.Count();
+                int count = _unitOfWork.Customers.Count();
                 response.Data = _mapper.Map<IEnumerable<CustomerDTO>>(customers);
                 if (response.Data != null)
                 {

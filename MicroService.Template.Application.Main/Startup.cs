@@ -1,4 +1,4 @@
-﻿using MicroService.Template.Application.Interface;
+﻿using MicroService.Template.Application.Interface.UseCases;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MicroService.Template.Application.Main

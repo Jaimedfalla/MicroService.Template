@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "MicroService.Template.Infraestructure.Repositories": {
+    "MicroService.Template.Persistence.Repositories": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

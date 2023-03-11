@@ -1,14 +1,14 @@
 ﻿using Dapper;
 using MicroService.Template.Domain.Entities;
-using MicroService.Template.Infraestructure.Data;
-using MicroService.Template.Infraestructure.Interface;
-using MicroService.Template.Infraestructure.Repositories.Constants;
+using MicroService.Template.Persistence.Data;
+using MicroService.Template.Application.Interface.Persistence;
+using MicroService.Template.Persistence.Repositories.Constants;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace MicroService.Template.Infraestructure.Repositories
+namespace MicroService.Template.Persistence.Repositories
 {
     internal class CustomerRepository : ICustomersRepository
     {

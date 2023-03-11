@@ -1,6 +1,6 @@
 # General Information
 
-This is an microservice template of how build an api with best practices, SOLID principles, Open Api standard. This template is based on project of [this course](https://www.udemy.com/course/arquitectura-aplicaciones-empresariales-con-net-core/)
+This is an microservice template of how build an api with best practices, SOLID principles, Open Api standard. This template is based on project of [this course](https://www.udemy.com/course/arquitectura-Applicationes-empresariales-con-net-core/)
 
 # .Net version
 - Version 7

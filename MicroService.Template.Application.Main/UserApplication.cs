@@ -2,8 +2,8 @@
 using FluentValidation;
 using FluentValidation.Results;
 using MicroService.Template.Application.DTO;
-using MicroService.Template.Application.Interface;
-using MicroService.Template.Domain.Interface;
+using MicroService.Template.Application.Interface.UseCases;
+using MicroService.Template.Application.Interface.Persistence;
 using MicroService.Template.Transversal.Common;
 using System;
 using MicroService.Template.Transversal.Common.Constants;
@@ -12,13 +12,13 @@ namespace MicroService.Template.Application.Main
 {
     internal class UserApplication:IUserApplication
     {
-        private readonly IUserDomain _domain;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly IValidator<UserLoginDto> _validator;
 
-        public UserApplication(IUserDomain domain, IMapper mapper, IValidator<UserLoginDto> validator)
+        public UserApplication(IUnitOfWork unitOfWork, IMapper mapper, IValidator<UserLoginDto> validator)
         {
-            _domain = domain;
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
             _validator = validator;
         }
@@ -36,7 +36,7 @@ namespace MicroService.Template.Application.Main
 
             try
             {
-                var user = _domain.Authenticate(userLogin.UserName, userLogin.Password);
+                var user = _unitOfWork.Users.Authenticate(userLogin.UserName, userLogin.Password);
                 response.Data = _mapper.Map<UserDTO>(user);
                 response.IsSuccess = true;
                 response.Message = Messages.AUTHENTICATED;

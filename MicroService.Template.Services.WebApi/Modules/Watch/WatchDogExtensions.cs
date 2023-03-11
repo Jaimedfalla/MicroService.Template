@@ -8,7 +8,7 @@ namespace MicroService.Template.Services.WebApi.Modules.Watch
         public static IServiceCollection AddWatchDog(this IServiceCollection services,IConfiguration configuration) {
             services.AddWatchDogServices(opt => {
                 opt.SetExternalDbConnString = configuration[Variables.CONNECTION_STRING_NAME];
-                opt.SqlDriverOption = WatchDog.src.Enums.WatchDogSqlDriverEnum.MSSQL;
+                opt.DbDriverOption = WatchDog.src.Enums.WatchDogSqlDriverEnum.MSSQL;
                 opt.IsAutoClear = true;
                 opt.ClearTimeSchedule = WatchDog.src.Enums.WatchDogAutoClearScheduleEnum.Monthly;
             });

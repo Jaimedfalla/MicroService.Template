@@ -24,15 +24,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MicroService.Template.Aplicacion.DTO\MicroService.Template.Application.DTO.csproj" />
-    <ProjectReference Include="..\MicroService.Template.Aplicacion.Interface\MicroService.Template.Application.Interface.csproj" />
+    <ProjectReference Include="..\MicroService.Template.Application.DTO\MicroService.Template.Application.DTO.csproj" />
+    <ProjectReference Include="..\MicroService.Template.Application.Interface\MicroService.Template.Application.Interface.csproj" />
     <ProjectReference Include="..\MicroService.Template.Application.Main\MicroService.Template.Application.Main.csproj" />
-    <ProjectReference Include="..\MicroService.Template.Domain.Core\MicroService.Template.Domain.Core.csproj" />
     <ProjectReference Include="..\MicroService.Template.Domain.Entities\MicroService.Template.Domain.Entities.csproj" />
-    <ProjectReference Include="..\MicroService.Template.Domain.Interface\MicroService.Template.Domain.Interface.csproj" />
-    <ProjectReference Include="..\MicroService.Template.Infraestructure.Data\MicroService.Template.Infraestructure.Data.csproj" />
-    <ProjectReference Include="..\MicroService.Template.Infraestructure.Interface\MicroService.Template.Infraestructure.Interface.csproj" />
-    <ProjectReference Include="..\MicroService.Template.Infraestructure.Repositories\MicroService.Template.Infraestructure.Repositories.csproj" />
+    <ProjectReference Include="..\MicroService.Template.Persistence.Data\MicroService.Template.Persistence.Data.csproj" />
+    <ProjectReference Include="..\MicroService.Template.Persistence.Repositories\MicroService.Template.Persistence.Repositories.csproj" />
     <ProjectReference Include="..\MicroService.Template.Transversal.Common\MicroService.Template.Transversal.Common.csproj" />
     <ProjectReference Include="..\MicroService.Template.Transversal.Logging\MicroService.Template.Transversal.Logging.csproj" />
     <ProjectReference Include="..\MicroService.Template.Transversal.Mapper\MicroService.Template.Transversal.Mapper.csproj" />

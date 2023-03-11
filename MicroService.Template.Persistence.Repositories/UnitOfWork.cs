@@ -1,7 +1,7 @@
-﻿using MicroService.Template.Infraestructure.Interface;
+﻿using MicroService.Template.Application.Interface.Persistence;
 using System;
 
-namespace MicroService.Template.Infraestructure.Repositories
+namespace MicroService.Template.Persistence.Repositories
 {
     internal class UnitOfWork : IUnitOfWork
     {

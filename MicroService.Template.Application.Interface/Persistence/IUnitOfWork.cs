@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MicroService.Template.Infraestructure.Interface
+namespace MicroService.Template.Application.Interface.Persistence
 {
     public interface IUnitOfWork:IDisposable
     {

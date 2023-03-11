@@ -1,10 +1,10 @@
 ﻿using Dapper;
 using MicroService.Template.Domain.Entities;
-using MicroService.Template.Infraestructure.Data;
-using MicroService.Template.Infraestructure.Interface;
+using MicroService.Template.Persistence.Data;
+using MicroService.Template.Application.Interface.Persistence;
 using System.Data;
 
-namespace MicroService.Template.Infraestructure.Repositories
+namespace MicroService.Template.Persistence.Repositories
 {
     internal class UserRepository : IUserRepository
     {

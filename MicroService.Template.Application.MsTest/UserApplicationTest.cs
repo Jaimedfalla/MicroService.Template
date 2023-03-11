@@ -2,7 +2,7 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
 using MicroService.Template.Application.DTO;
-using MicroService.Template.Application.Interface;
+using MicroService.Template.Application.Interface.UseCases;
 using MicroService.Template.Transversal.Common.Constants;
 
 namespace MicroService.Template.Application.MsTest

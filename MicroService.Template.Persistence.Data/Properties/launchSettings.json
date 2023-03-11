@@ -1,12 +1,12 @@
 {
   "profiles": {
-    "MicroService.Template.Infraestructure.Interface": {
+    "MicroService.Template.Persistence.Data": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "https://localhost:49250;http://localhost:49258"
+      "applicationUrl": "https://localhost:49249;http://localhost:49253"
     }
   }
 }

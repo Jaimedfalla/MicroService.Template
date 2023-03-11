@@ -1,6 +1,6 @@
 ﻿using MicroService.Template.Domain.Entities;
 
-namespace MicroService.Template.Infraestructure.Interface
+namespace MicroService.Template.Application.Interface.Persistence
 {
     public interface ICustomersRepository:IGenericRepository<Customer>
     {

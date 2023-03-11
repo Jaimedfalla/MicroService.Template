@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MicroService.Template.Infraestructure.Data\MicroService.Template.Infraestructure.Data.csproj" />
-    <ProjectReference Include="..\MicroService.Template.Infraestructure.Interface\MicroService.Template.Infraestructure.Interface.csproj" />
+    <ProjectReference Include="..\MicroService.Template.Persistence.Data\MicroService.Template.Persistence.Data.csproj" />
+    <ProjectReference Include="..\MicroService.Template.Application.Interface\MicroService.Template.Application.Interface.csproj" />
     <ProjectReference Include="..\MicroService.Template.Transversal.Common\MicroService.Template.Transversal.Common.csproj" />
   </ItemGroup>
 

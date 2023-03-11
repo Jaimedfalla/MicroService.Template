@@ -1,5 +1,5 @@
 ﻿using MicroService.Template.Application.DTO;
-using MicroService.Template.Application.Interface;
+using MicroService.Template.Application.Interface.UseCases;
 using MicroService.Template.Transversal.Common;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

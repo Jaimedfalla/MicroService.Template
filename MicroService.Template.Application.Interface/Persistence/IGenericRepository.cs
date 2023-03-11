@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MicroService.Template.Infraestructure.Interface
+namespace MicroService.Template.Application.Interface.Persistence
 {
     public interface IGenericRepository<T> where T : class
     {

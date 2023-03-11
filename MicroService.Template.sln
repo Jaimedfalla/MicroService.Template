@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Trans
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transversal", "Transversal", "{3A05F2DA-7D78-429F-9C38-D9F3CF8EF2AA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraestructure", "{124E4B6C-8736-4919-B220-921E59D76EDF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{124E4B6C-8736-4919-B220-921E59D76EDF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{C808D71A-A4C7-48C0-A235-FBBB35CBF7D4}"
 EndProject
@@ -15,23 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{75E8F116-E656-4CE0-B024-77A9958FF660}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Infraestructure.Data", "MicroService.Template.Infraestructure.Data\MicroService.Template.Infraestructure.Data.csproj", "{F0B4554F-5B94-4E63-B312-D80FC7489984}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Infraestructure.Interface", "MicroService.Template.Infraestructure.Interface\MicroService.Template.Infraestructure.Interface.csproj", "{CE1CC803-9980-407F-A926-01462520A5FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Persistence.Data", "MicroService.Template.Persistence.Data\MicroService.Template.Persistence.Data.csproj", "{F0B4554F-5B94-4E63-B312-D80FC7489984}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Domain.Entities", "MicroService.Template.Domain.Entities\MicroService.Template.Domain.Entities.csproj", "{0BD43DDA-AE30-4207-A2B5-28AC9601BF8C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Infraestructure.Repositories", "MicroService.Template.Infraestructure.Repositories\MicroService.Template.Infraestructure.Repositories.csproj", "{75A3B656-B211-4F53-99E9-EC4106C9A885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Persistence.Repositories", "MicroService.Template.Persistence.Repositories\MicroService.Template.Persistence.Repositories.csproj", "{75A3B656-B211-4F53-99E9-EC4106C9A885}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Domain.Interface", "MicroService.Template.Domain.Interface\MicroService.Template.Domain.Interface.csproj", "{A00D8EA4-A4DB-42F3-B4EE-A7E92B0DA566}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Domain.Core", "MicroService.Template.Domain.Core\MicroService.Template.Domain.Core.csproj", "{43FBEF1D-136F-4298-9E78-54EDA3AC2CD3}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Application.DTO", "MicroService.Template.Aplicacion.DTO\MicroService.Template.Application.DTO.csproj", "{230ED66E-096A-4C56-AC4A-5DE07A9012BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Application.DTO", "MicroService.Template.Application.DTO\MicroService.Template.Application.DTO.csproj", "{230ED66E-096A-4C56-AC4A-5DE07A9012BF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Transversal.Mapper", "MicroService.Template.Transversal.Mapper\MicroService.Template.Transversal.Mapper.csproj", "{F954A045-83BE-41AA-B41B-CB721918C638}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Application.Interface", "MicroService.Template.Aplicacion.Interface\MicroService.Template.Application.Interface.csproj", "{51B04932-F79A-447E-943D-837C3B9201B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Application.Interface", "MicroService.Template.Application.Interface\MicroService.Template.Application.Interface.csproj", "{51B04932-F79A-447E-943D-837C3B9201B9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Application.Main", "MicroService.Template.Application.Main\MicroService.Template.Application.Main.csproj", "{9D9405EB-862C-45D1-AE92-E0119B55603A}"
 EndProject
@@ -123,10 +117,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{22392D90-61A2-4F29-A1AA-318E2FEB9C57} = {3A05F2DA-7D78-429F-9C38-D9F3CF8EF2AA}
-		{F0B4554F-5B94-4E63-B312-D80FC7489984} = {124E4B6C-8736-4919-B220-921E59D76EDF}
-		{CE1CC803-9980-407F-A926-01462520A5FE} = {124E4B6C-8736-4919-B220-921E59D76EDF}
 		{0BD43DDA-AE30-4207-A2B5-28AC9601BF8C} = {C808D71A-A4C7-48C0-A235-FBBB35CBF7D4}
-		{75A3B656-B211-4F53-99E9-EC4106C9A885} = {124E4B6C-8736-4919-B220-921E59D76EDF}
 		{A00D8EA4-A4DB-42F3-B4EE-A7E92B0DA566} = {C808D71A-A4C7-48C0-A235-FBBB35CBF7D4}
 		{43FBEF1D-136F-4298-9E78-54EDA3AC2CD3} = {C808D71A-A4C7-48C0-A235-FBBB35CBF7D4}
 		{230ED66E-096A-4C56-AC4A-5DE07A9012BF} = {02AFACD1-F669-40A4-8A25-356341133B5D}

@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MicroService.Template.Aplicacion.DTO\MicroService.Template.Application.DTO.csproj" />
-    <ProjectReference Include="..\MicroService.Template.Aplicacion.Interface\MicroService.Template.Application.Interface.csproj" />
+    <ProjectReference Include="..\MicroService.Template.Application.DTO\MicroService.Template.Application.DTO.csproj" />
+    <ProjectReference Include="..\MicroService.Template.Application.Interface\MicroService.Template.Application.Interface.csproj" />
     <ProjectReference Include="..\MicroService.Template.Application.Validator\MicroService.Template.Application.Validator.csproj" />
     <ProjectReference Include="..\MicroService.Template.Domain.Entities\MicroService.Template.Domain.Entities.csproj" />
     <ProjectReference Include="..\MicroService.Template.Domain.Interface\MicroService.Template.Domain.Interface.csproj" />

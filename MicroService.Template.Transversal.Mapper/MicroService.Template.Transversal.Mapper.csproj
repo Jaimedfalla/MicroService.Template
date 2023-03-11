@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MicroService.Template.Aplicacion.DTO\MicroService.Template.Application.DTO.csproj" />
+    <ProjectReference Include="..\MicroService.Template.Application.DTO\MicroService.Template.Application.DTO.csproj" />
     <ProjectReference Include="..\MicroService.Template.Domain.Entities\MicroService.Template.Domain.Entities.csproj" />
   </ItemGroup>
 

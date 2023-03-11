@@ -3,7 +3,7 @@ using MicroService.Template.Transversal.Common;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MicroService.Template.Application.Interface
+namespace MicroService.Template.Application.Interface.UseCases
 {
     public interface ICustomerApplication
     {

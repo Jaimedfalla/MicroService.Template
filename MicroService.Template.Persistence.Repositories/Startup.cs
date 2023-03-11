@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using MicroService.Template.Infraestructure.Data;
-using MicroService.Template.Infraestructure.Interface;
+using MicroService.Template.Persistence.Data;
+using MicroService.Template.Application.Interface.Persistence;
 
-namespace MicroService.Template.Infraestructure.Repositories
+namespace MicroService.Template.Persistence.Repositories
 {
     public static class Startup
     {

@@ -3,7 +3,7 @@ using MicroService.Template.Transversal.Common.Constants;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace MicroService.Template.Infraestructure.Data
+namespace MicroService.Template.Persistence.Data
 {
     public class DapperContext
     {
