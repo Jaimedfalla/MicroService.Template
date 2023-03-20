@@ -1,7 +1,7 @@
 ﻿using MicroService.Template.Application.Interface.UseCases;
-using Microsoft.Extensions.DependencyInjection;
 using MicroService.Template.Application.Main.Customers;
 using MicroService.Template.Application.Main.Users;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MicroService.Template.Application.Main
 {

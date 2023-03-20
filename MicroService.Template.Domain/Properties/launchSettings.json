@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "MicroService.Template.Domain.Entities": {
+    "MicroService.Template.Domain": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

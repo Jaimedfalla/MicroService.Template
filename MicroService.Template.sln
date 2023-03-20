@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{75E8F116-E656-4CE0-B024-77A9958FF660}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Domain.Entities", "MicroService.Template.Domain.Entities\MicroService.Template.Domain.Entities.csproj", "{0BD43DDA-AE30-4207-A2B5-28AC9601BF8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Domain", "MicroService.Template.Domain\MicroService.Template.Domain.csproj", "{0BD43DDA-AE30-4207-A2B5-28AC9601BF8C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Persistence", "MicroService.Template.Persistence\MicroService.Template.Persistence.csproj", "{75A3B656-B211-4F53-99E9-EC4106C9A885}"
 EndProject

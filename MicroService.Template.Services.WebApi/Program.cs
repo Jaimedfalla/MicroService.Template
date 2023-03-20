@@ -26,7 +26,7 @@ builder.Services.Configure<JsonOptions>(options =>
     options.SerializerOptions.WriteIndented = true;
 });
 
-builder.Services.InitLayers();
+builder.Services.InitLayers(builder.Configuration);
 builder.Services.AddAuthentication(builder.Configuration);
 builder.Services.AddVersioning();
 builder.Services.AddScoped(typeof(IAppLogger<>),typeof(LoggerAdapter<>));

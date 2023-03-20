@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MicroService.Template.Application.DTO\MicroService.Template.Application.DTO.csproj" />
     <ProjectReference Include="..\MicroService.Template.Transversal.Common\MicroService.Template.Transversal.Common.csproj" />
-    <ProjectReference Include="..\MicroService.Template.Domain.Entities\MicroService.Template.Domain.Entities.csproj" />
+    <ProjectReference Include="..\MicroService.Template.Domain\MicroService.Template.Domain.csproj" />
   </ItemGroup>
 
 </Project>

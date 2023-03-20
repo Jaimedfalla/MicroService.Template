@@ -7,11 +7,11 @@ namespace MicroService.Template.Services.WebApi.Modules.Layers
 {
     public static class LayersExtensions
     {
-        public static IServiceCollection InitLayers(this IServiceCollection services) {
+        public static IServiceCollection InitLayers(this IServiceCollection services,IConfiguration configuration) {
+            services.InitApplication();
             services.InitValidators();
             services.InitMapper();
-            services.InitApplication();
-            services.InitRepositories();
+            services.InitRepositories(configuration);
 
             return services;
         }
