@@ -12,7 +12,7 @@ namespace MicroService.Template.Persistence
     {
         public static IServiceCollection InitRepositories(this IServiceCollection service,IConfiguration configuration) {
             service.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("NorthWindConnection"),
+                options.UseSqlServer(configuration.GetConnectionString("SQL_connection"),
                 builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName))
             );
             service.AddSingleton<DapperContext>();

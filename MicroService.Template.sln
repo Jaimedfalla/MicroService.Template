@@ -31,6 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Servi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{53975ED3-3125-4A11-BAD0-8E310CCDA2DD}"
 	ProjectSection(SolutionItems) = preProject
+		Database_init.sql = Database_init.sql
 		README.md = README.md
 		WatchDog_Setup.sql = WatchDog_Setup.sql
 	EndProjectSection
@@ -41,7 +42,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{BC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Application.MsTest", "MicroService.Template.Application.MsTest\MicroService.Template.Application.MsTest.csproj", "{F01EFB66-D5C7-451C-9F30-AD98BB392AC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroService.Template.Transversal.Logging", "MicroService.Template.Transversal.Logging\MicroService.Template.Transversal.Logging.csproj", "{765929EE-EEE4-4095-83C1-14BAD43AE824}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Template.Transversal.Logging", "MicroService.Template.Transversal.Logging\MicroService.Template.Transversal.Logging.csproj", "{765929EE-EEE4-4095-83C1-14BAD43AE824}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,14 +54,6 @@ Global
 		{22392D90-61A2-4F29-A1AA-318E2FEB9C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22392D90-61A2-4F29-A1AA-318E2FEB9C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22392D90-61A2-4F29-A1AA-318E2FEB9C57}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F0B4554F-5B94-4E63-B312-D80FC7489984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0B4554F-5B94-4E63-B312-D80FC7489984}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F0B4554F-5B94-4E63-B312-D80FC7489984}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F0B4554F-5B94-4E63-B312-D80FC7489984}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CE1CC803-9980-407F-A926-01462520A5FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE1CC803-9980-407F-A926-01462520A5FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE1CC803-9980-407F-A926-01462520A5FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE1CC803-9980-407F-A926-01462520A5FE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0BD43DDA-AE30-4207-A2B5-28AC9601BF8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0BD43DDA-AE30-4207-A2B5-28AC9601BF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BD43DDA-AE30-4207-A2B5-28AC9601BF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -108,6 +101,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{22392D90-61A2-4F29-A1AA-318E2FEB9C57} = {3A05F2DA-7D78-429F-9C38-D9F3CF8EF2AA}
 		{0BD43DDA-AE30-4207-A2B5-28AC9601BF8C} = {C808D71A-A4C7-48C0-A235-FBBB35CBF7D4}
+		{75A3B656-B211-4F53-99E9-EC4106C9A885} = {124E4B6C-8736-4919-B220-921E59D76EDF}
 		{230ED66E-096A-4C56-AC4A-5DE07A9012BF} = {02AFACD1-F669-40A4-8A25-356341133B5D}
 		{F954A045-83BE-41AA-B41B-CB721918C638} = {3A05F2DA-7D78-429F-9C38-D9F3CF8EF2AA}
 		{51B04932-F79A-447E-943D-837C3B9201B9} = {02AFACD1-F669-40A4-8A25-356341133B5D}

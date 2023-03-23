@@ -7,7 +7,7 @@
     <UserSecretsId>d678c655-baa3-4fcd-bfad-c50875d58414</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 	  <DockerfileRunArguments>--network net-containers-dotnet --name ecommerce-api --network-alias ecommerce-api</DockerfileRunArguments>
-	  <GenerateDocumentationFile>False</GenerateDocumentationFile>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

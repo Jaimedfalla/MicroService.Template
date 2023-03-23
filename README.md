@@ -11,8 +11,7 @@ This is an microservice template of how build an api with best practices, SOLID 
 - WatchDog
 
 # Setup
-- After run WebApi project, [Script](./WatchDog_Setup.sql) to alter columns Watch Dog tables must be executed
-- For the project MicroService.Template.Services.WebApi, the following secrets must be setting as user secrets. Refer this [site](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-6.0&tabs=windows).
+1. For the project MicroService.Template.Services.WebApi, the following secrets must be setting as user secrets. Refer this [site](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-6.0&tabs=windows).
 	
 1. ConnectionStrings:SQL_connection
 2. Config:Secret
@@ -21,3 +20,8 @@ This is an microservice template of how build an api with best practices, SOLID 
 5. Config:Audience
 6. WatchDog:UserName
 7. WatchDog:Password
+
+2. Execute [Database Script](./Database_init.sql) to install Database
+3. Insert user credentials into User table
+4. Run WebApi project.
+5. Run [Script](./WatchDog_Setup.sql) to alter columns Watch Dog tables on database created at step number 2

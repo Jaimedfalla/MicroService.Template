@@ -11,6 +11,7 @@ using MicroService.Template.Services.WebApi.Modules.Watch;
 using MicroService.Template.Transversal.Common;
 using MicroService.Template.Transversal.Logging;
 using WatchDog;
+using MicroService.Template.Services.WebApi.Modules.RateLimiter;
 
 string myPolicy = "apiECommercePolicy";
 
@@ -34,6 +35,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwagger();
 builder.Services.AddHealthCheck(builder.Configuration);
 builder.Services.AddWatchDog(builder.Configuration);
+builder.Services.AddRateLimiting(builder.Configuration); 
 
 var app = builder.Build();
 
@@ -59,6 +61,7 @@ app.UseHttpsRedirection();
 app.UseCors(myPolicy);
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseRateLimiter();
 app.MapControllers();
 app.MapHealthChecksUI();
 app.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions

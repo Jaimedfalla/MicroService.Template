@@ -1,14 +1,17 @@
 ﻿using MicroService.Template.Application.DTO;
 using MicroService.Template.Application.Interface.UseCases;
 using MicroService.Template.Transversal.Common;
+using MicroService.Template.Transversal.Common.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace MicroService.Template.Services.WebApi.Controllers.v2
 {
 
     [Authorize]
     [Route("api/v{version:apiVersion}/[controller]/[action]")]
+    [EnableRateLimiting(Variables.RATE_LIMITING_POLICY)]
     [ApiController]
     [ApiVersion("2.0")]
     public class CustomersController : ControllerBase

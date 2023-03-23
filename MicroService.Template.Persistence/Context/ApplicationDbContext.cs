@@ -1,9 +1,7 @@
-using System.Reflection;
-using System.Threading;
-using System.Threading.Tasks;
 using MicroService.Template.Domain.Entities;
 using MicroService.Template.Persistence.Interceptors;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace MicroService.Template.Persistence.Context
 {
