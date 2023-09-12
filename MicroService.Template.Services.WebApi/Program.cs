@@ -1,17 +1,17 @@
 using HealthChecks.UI.Client;
-using Microsoft.AspNetCore.Http.Json;
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using MicroService.Template.Services.WebApi.Modules.Authentication;
 using MicroService.Template.Services.WebApi.Modules.Feature;
 using MicroService.Template.Services.WebApi.Modules.HealthCheck;
 using MicroService.Template.Services.WebApi.Modules.Layers;
+using MicroService.Template.Services.WebApi.Modules.RateLimiter;
 using MicroService.Template.Services.WebApi.Modules.Swagger;
 using MicroService.Template.Services.WebApi.Modules.Versioning;
 using MicroService.Template.Services.WebApi.Modules.Watch;
 using MicroService.Template.Transversal.Common;
 using MicroService.Template.Transversal.Logging;
+using Microsoft.AspNetCore.Http.Json;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using WatchDog;
-using MicroService.Template.Services.WebApi.Modules.RateLimiter;
 
 string myPolicy = "apiECommercePolicy";
 
@@ -19,7 +19,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddFeature(builder.Configuration, myPolicy);
-builder.Services.AddControllers();
 builder.Services.Configure<JsonOptions>(options =>
 {
     options.SerializerOptions.PropertyNameCaseInsensitive = false;

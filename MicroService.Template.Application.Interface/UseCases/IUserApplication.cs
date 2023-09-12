@@ -5,6 +5,6 @@ namespace MicroService.Template.Application.Interface.UseCases
 {
     public interface IUserApplication
     {
-        Response<UserDTO> Authenticate(UserLoginDto userLogin);
+        Response<UserDto> Authenticate(UserLoginDto userLogin);
     }
 }

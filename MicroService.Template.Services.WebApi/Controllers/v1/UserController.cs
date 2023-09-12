@@ -12,6 +12,9 @@ using System.Text;
 
 namespace MicroService.Template.Services.WebApi.Controllers.v1
 {
+    /// <summary>
+    /// Controller for customers V1
+    /// </summary>
     [Authorize]
     [Route("api/v{version:apiVersion}/[controller]/[action]")]
     [ApiController]
@@ -59,7 +62,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v1
             return BadRequest(response);
         }
 
-        private string BuildToken(Response<UserDTO> user)
+        private string BuildToken(Response<UserDto> user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);

@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace MicroService.Template.Services.WebApi.Controllers.v1
 {
 
+    /// <summary>
+    /// Controller for customers V2
+    /// </summary>
     [Authorize]
     [Route("api/v{version:apiVersion}/[controller]/[action]")]
     [ApiController]
@@ -26,7 +29,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v1
         /// <param name="customer">New customer data</param>
         /// <returns>Resulto of the process</returns>
         [HttpPost]
-        public IActionResult Insert([FromBody] CustomerDTO customer)
+        public IActionResult Insert([FromBody] CustomerDto customer)
         {
             if (customer is null) return BadRequest();
 
@@ -43,7 +46,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v1
         /// <param name="customer">Customer data to update</param>
         /// <returns>Customer was updated</returns>
         [HttpPut]
-        public IActionResult Update([FromBody] CustomerDTO customer)
+        public IActionResult Update([FromBody] CustomerDto customer)
         {
             if (customer is null) return BadRequest();
 
@@ -71,7 +74,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v1
         {
             if (string.IsNullOrEmpty(customerId)) return BadRequest();
 
-            Response<CustomerDTO> result = _service.GetCustomer(customerId);
+            Response<CustomerDto> result = _service.GetCustomer(customerId);
 
             if (result.IsSuccess) return Ok(result);
 
@@ -81,7 +84,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v1
         [HttpGet]
         public IActionResult GetAll()
         {
-            Response<IEnumerable<CustomerDTO>> result = _service.GetAll();
+            Response<IEnumerable<CustomerDto>> result = _service.GetAll();
 
             if (result.IsSuccess) return Ok(result);
 
@@ -89,7 +92,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v1
         }
 
         [HttpPost("Async")]
-        public async Task<IActionResult> InsertAsync([FromBody] CustomerDTO customer)
+        public async Task<IActionResult> InsertAsync([FromBody] CustomerDto customer)
         {
             if (customer is null) return BadRequest();
 
@@ -101,7 +104,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v1
         }
 
         [HttpPut("Async")]
-        public async Task<IActionResult> UpdateAsync([FromBody] CustomerDTO customer)
+        public async Task<IActionResult> UpdateAsync([FromBody] CustomerDto customer)
         {
             if (customer is null) return BadRequest();
 
@@ -129,7 +132,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v1
         {
             if (string.IsNullOrEmpty(customerId)) return BadRequest();
 
-            Response<CustomerDTO> result = await _service.GetCustomerAsync(customerId);
+            Response<CustomerDto> result = await _service.GetCustomerAsync(customerId);
 
             if (result.IsSuccess) return Ok(result);
 
@@ -139,7 +142,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v1
         [HttpGet("Async")]
         public async Task<IActionResult> GetAllAsync()
         {
-            Response<IEnumerable<CustomerDTO>> result = await _service.GetAllAsync();
+            Response<IEnumerable<CustomerDto>> result = await _service.GetAllAsync();
 
             if (result.IsSuccess) return Ok(result);
 

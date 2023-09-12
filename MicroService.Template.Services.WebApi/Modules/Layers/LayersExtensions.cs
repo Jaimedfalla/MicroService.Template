@@ -1,23 +1,19 @@
-﻿using MicroService.Template.Application.Main;
+﻿using MicroService.Template.Application.UseCases;
 using MicroService.Template.Persistence;
-using MicroService.Template.Services.WebApi.Modules.Validator;
-using MicroService.Template.Transversal.Mapper;
 
 namespace MicroService.Template.Services.WebApi.Modules.Layers
 {
+    /// <summary>
+    /// Generates dependency injection for layers
+    /// </summary>
     public static class LayersExtensions
     {
+        /// <summary>
+        /// Initializes the layers
+        /// </summary>
         public static IServiceCollection InitLayers(this IServiceCollection services,IConfiguration configuration) {
             services.InitApplication();
-            services.InitValidators();
-            services.InitMapper();
             services.InitRepositories(configuration);
-
-            return services;
-        }
-
-        public static IServiceCollection InitMapper(this IServiceCollection services) {
-            services.AddAutoMapper(x => x.AddProfile(new MappingProfile()));
 
             return services;
         }

@@ -7,18 +7,18 @@ namespace MicroService.Template.Application.Interface.UseCases
 {
     public interface ICustomerApplication
     {
-        Response<bool> Add(CustomerDTO customer);
-        Response<bool> Update(CustomerDTO customer);
+        Response<bool> Add(CustomerDto customer);
+        Response<bool> Update(CustomerDto customer);
         Response<bool> Delete(string customerId);
-        Response<CustomerDTO> GetCustomer(string customerId);
-        Response<IEnumerable<CustomerDTO>> GetAll();
-        ResponsePagination<IEnumerable<CustomerDTO>> GetAllWithPagination(int numberPage,int pageSize);
+        Response<CustomerDto> GetCustomer(string customerId);
+        Response<IEnumerable<CustomerDto>> GetAll();
+        ResponsePagination<IEnumerable<CustomerDto>> GetAllWithPagination(int numberPage,int pageSize);
 
-        Task<Response<bool>> AddAsync(CustomerDTO customer);
-        Task<Response<bool>> UpdateAsync(CustomerDTO customer);
+        Task<Response<bool>> AddAsync(CustomerDto customer);
+        Task<Response<bool>> UpdateAsync(CustomerDto customer);
         Task<Response<bool>> DeleteAsync(string customerId);
-        Task<Response<CustomerDTO>> GetCustomerAsync(string customerId);
-        Task<Response<IEnumerable<CustomerDTO>>> GetAllAsync();
-        Task<ResponsePagination<IEnumerable<CustomerDTO>>> GetAllWithPaginationAsync(int numberPage, int pageSize);
+        Task<Response<CustomerDto>> GetCustomerAsync(string customerId);
+        Task<Response<IEnumerable<CustomerDto>>> GetAllAsync();
+        Task<ResponsePagination<IEnumerable<CustomerDto>>> GetAllWithPaginationAsync(int numberPage, int pageSize);
     }
 }

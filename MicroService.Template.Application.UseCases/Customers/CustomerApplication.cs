@@ -10,7 +10,7 @@ using System;
 using System.Linq;
 using MicroService.Template.Transversal.Common.Constants;
 
-namespace MicroService.Template.Application.Main.Customers
+namespace MicroService.Template.Application.UseCases.Customers
 {
     internal class CustomerApplication:ICustomerApplication
     {
@@ -25,7 +25,7 @@ namespace MicroService.Template.Application.Main.Customers
             _logger = logger;
         }
 
-        public Response<bool> Add(CustomerDTO customerDto)
+        public Response<bool> Add(CustomerDto customerDto)
         {
             Response<bool> response = new Response<bool>();
             try {
@@ -40,7 +40,7 @@ namespace MicroService.Template.Application.Main.Customers
 
             return response;
         }
-        public async Task<Response<bool>> AddAsync(CustomerDTO customerDto)
+        public async Task<Response<bool>> AddAsync(CustomerDto customerDto)
         {
             Response<bool> response = new Response<bool>();
             try
@@ -89,13 +89,13 @@ namespace MicroService.Template.Application.Main.Customers
 
             return response;
         }
-        public Response<IEnumerable<CustomerDTO>> GetAll()
+        public Response<IEnumerable<CustomerDto>> GetAll()
         {
-            Response<IEnumerable<CustomerDTO>> response = new Response<IEnumerable<CustomerDTO>>();
+            Response<IEnumerable<CustomerDto>> response = new Response<IEnumerable<CustomerDto>>();
             try
             {
                 var customers = _unitOfWork.Customers.GetAll();
-                response.Data = _mapper.Map<IEnumerable<CustomerDTO>>(customers);
+                response.Data = _mapper.Map<IEnumerable<CustomerDto>>(customers);
                 response.IsSuccess = response.Data.Any();
                 response.Message = Messages.RETRIEVED;
 
@@ -109,13 +109,13 @@ namespace MicroService.Template.Application.Main.Customers
 
             return response;
         }
-        public async Task<Response<IEnumerable<CustomerDTO>>> GetAllAsync()
+        public async Task<Response<IEnumerable<CustomerDto>>> GetAllAsync()
         {
-            Response<IEnumerable<CustomerDTO>> response = new Response<IEnumerable<CustomerDTO>>();
+            Response<IEnumerable<CustomerDto>> response = new Response<IEnumerable<CustomerDto>>();
             try
             {
                 var customers = await _unitOfWork.Customers.GetAllAsync();
-                response.Data = _mapper.Map<IEnumerable<CustomerDTO>>(customers);
+                response.Data = _mapper.Map<IEnumerable<CustomerDto>>(customers);
                 response.IsSuccess = response.Data.Any();
                 response.Message = Messages.RETRIEVED;
             }
@@ -126,24 +126,24 @@ namespace MicroService.Template.Application.Main.Customers
 
             return response;
         }
-        public ResponsePagination<IEnumerable<CustomerDTO>> GetAllWithPagination(int numberPage, int pageSize)
+        public ResponsePagination<IEnumerable<CustomerDto>> GetAllWithPagination(int numberPage, int pageSize)
         {
             var data = _unitOfWork.Customers.GetAllWithPagination(numberPage, pageSize);
             return PaginateData(data,numberPage,pageSize);
         }
             
-        public async Task<ResponsePagination<IEnumerable<CustomerDTO>>> GetAllWithPaginationAsync(int numberPage, int pageSize)
+        public async Task<ResponsePagination<IEnumerable<CustomerDto>>> GetAllWithPaginationAsync(int numberPage, int pageSize)
         {
             var data = await _unitOfWork.Customers.GetAllWithPaginationAsync(numberPage, pageSize);
             return PaginateData(data, numberPage, pageSize);
         }
-        public Response<CustomerDTO> GetCustomer(string customerId)
+        public Response<CustomerDto> GetCustomer(string customerId)
         {
-            Response<CustomerDTO> response = new Response<CustomerDTO>();
+            Response<CustomerDto> response = new Response<CustomerDto>();
             try
             {
                 var customers = _unitOfWork.Customers.GetCustomer(customerId);
-                response.Data = _mapper.Map<CustomerDTO>(customers);
+                response.Data = _mapper.Map<CustomerDto>(customers);
                 response.IsSuccess = response.Data !=null;
                 response.Message = Messages.RETRIEVED;
             }
@@ -154,13 +154,13 @@ namespace MicroService.Template.Application.Main.Customers
 
             return response;
         }
-        public async Task<Response<CustomerDTO>> GetCustomerAsync(string customerId)
+        public async Task<Response<CustomerDto>> GetCustomerAsync(string customerId)
         {
-            Response<CustomerDTO> response = new Response<CustomerDTO>();
+            Response<CustomerDto> response = new Response<CustomerDto>();
             try
             {
                 var customers = await _unitOfWork.Customers.GetCustomerAsync(customerId);
-                response.Data = _mapper.Map<CustomerDTO>(customers);
+                response.Data = _mapper.Map<CustomerDto>(customers);
                 response.IsSuccess = response.Data != null;
                 response.Message = Messages.RETRIEVED;
             }
@@ -171,7 +171,7 @@ namespace MicroService.Template.Application.Main.Customers
 
             return response;
         }
-        public Response<bool> Update(CustomerDTO customerDto)
+        public Response<bool> Update(CustomerDto customerDto)
         {
             Response<bool> response = new Response<bool>();
             try
@@ -188,7 +188,7 @@ namespace MicroService.Template.Application.Main.Customers
 
             return response;
         }
-        public async Task<Response<bool>> UpdateAsync(CustomerDTO customerDto)
+        public async Task<Response<bool>> UpdateAsync(CustomerDto customerDto)
         {
             Response<bool> response = new Response<bool>();
             try
@@ -206,12 +206,12 @@ namespace MicroService.Template.Application.Main.Customers
             return response;
         }
 
-        private ResponsePagination<IEnumerable<CustomerDTO>> PaginateData(IEnumerable<Customer> customers, int numberPage, int pageSize) {
-            ResponsePagination<IEnumerable<CustomerDTO>> response = new ResponsePagination<IEnumerable<CustomerDTO>>();
+        private ResponsePagination<IEnumerable<CustomerDto>> PaginateData(IEnumerable<Customer> customers, int numberPage, int pageSize) {
+            ResponsePagination<IEnumerable<CustomerDto>> response = new ResponsePagination<IEnumerable<CustomerDto>>();
             try
             {
                 int count = _unitOfWork.Customers.Count();
-                response.Data = _mapper.Map<IEnumerable<CustomerDTO>>(customers);
+                response.Data = _mapper.Map<IEnumerable<CustomerDto>>(customers);
                 if (response.Data != null)
                 {
                     response.PageNumber = numberPage;

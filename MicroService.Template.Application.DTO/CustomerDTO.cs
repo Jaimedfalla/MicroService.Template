@@ -1,6 +1,6 @@
 ﻿namespace MicroService.Template.Application.DTO
 {
-    public class CustomerDTO
+    public class CustomerDto
     {
         public string? CustomerId { get; set; }
         public string? CompanyName { get; set; }

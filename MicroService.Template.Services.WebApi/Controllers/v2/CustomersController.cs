@@ -28,7 +28,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v2
         /// <param name="customer">Customer data to update</param>
         /// <returns>Customer was updated</returns>
         [HttpPut("Update/{customerId}")]
-        public IActionResult Update(string customerId, [FromBody] CustomerDTO customerDto)
+        public IActionResult Update(string customerId, [FromBody] CustomerDto customerDto)
         {
             var customer = _service.GetCustomer(customerId);
 
@@ -48,7 +48,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v2
         /// <param name="customer">New customer data</param>
         /// <returns>Resulto of the process</returns>
         [HttpPost]
-        public IActionResult Insert([FromBody] CustomerDTO customer)
+        public IActionResult Insert([FromBody] CustomerDto customer)
         {
             if (customer is null) return BadRequest();
 
@@ -76,7 +76,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v2
         {
             if (string.IsNullOrEmpty(customerId)) return BadRequest();
 
-            Response<CustomerDTO> result = _service.GetCustomer(customerId);
+            Response<CustomerDto> result = _service.GetCustomer(customerId);
 
             if (result.IsSuccess) return Ok(result);
 
@@ -86,7 +86,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v2
         [HttpGet]
         public IActionResult GetAll([FromQuery]int numberPage,int pageSize)
         {
-            ResponsePagination<IEnumerable<CustomerDTO>> result = _service.GetAllWithPagination(numberPage, pageSize);
+            ResponsePagination<IEnumerable<CustomerDto>> result = _service.GetAllWithPagination(numberPage, pageSize);
 
             if (result.IsSuccess) return Ok(result);
 
@@ -94,7 +94,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v2
         }
 
         [HttpPost("Async")]
-        public async Task<IActionResult> InsertAsync([FromBody] CustomerDTO customer)
+        public async Task<IActionResult> InsertAsync([FromBody] CustomerDto customer)
         {
             if (customer is null) return BadRequest();
 
@@ -122,7 +122,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v2
         {
             if (string.IsNullOrEmpty(customerId)) return BadRequest();
 
-            Response<CustomerDTO> result = await _service.GetCustomerAsync(customerId);
+            Response<CustomerDto> result = await _service.GetCustomerAsync(customerId);
 
             if (result.IsSuccess) return Ok(result);
 
@@ -132,7 +132,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v2
         [HttpGet("Async")]
         public async Task<IActionResult> GetAllAsync([FromQuery] int numberPage, int pageSize)
         {
-            ResponsePagination<IEnumerable<CustomerDTO>> result = await _service.GetAllWithPaginationAsync(numberPage, pageSize);
+            ResponsePagination<IEnumerable<CustomerDto>> result = await _service.GetAllWithPaginationAsync(numberPage, pageSize);
 
             if (result.IsSuccess) return Ok(result);
 
@@ -140,7 +140,7 @@ namespace MicroService.Template.Services.WebApi.Controllers.v2
         }
 
         [HttpPut("UpdateAsync/{customerId}")]
-        public async Task<IActionResult> UpdateAsync(string customerId, [FromBody] CustomerDTO customerDto)
+        public async Task<IActionResult> UpdateAsync(string customerId, [FromBody] CustomerDto customerDto)
         {
             var customer = await _service.GetCustomerAsync(customerId);
 

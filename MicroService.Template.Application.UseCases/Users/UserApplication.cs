@@ -8,7 +8,7 @@ using MicroService.Template.Transversal.Common;
 using System;
 using MicroService.Template.Transversal.Common.Constants;
 
-namespace MicroService.Template.Application.Main.Users
+namespace MicroService.Template.Application.UseCases.Users
 {
     internal class UserApplication:IUserApplication
     {
@@ -23,9 +23,9 @@ namespace MicroService.Template.Application.Main.Users
             _validator = validator;
         }
 
-        public Response<UserDTO> Authenticate(UserLoginDto userLogin)
+        public Response<UserDto> Authenticate(UserLoginDto userLogin)
         {
-            Response<UserDTO> response = new Response<UserDTO>();
+            Response<UserDto> response = new Response<UserDto>();
             ValidationResult result = _validator.Validate(userLogin);
 
             if (!result.IsValid) {
@@ -37,7 +37,7 @@ namespace MicroService.Template.Application.Main.Users
             try
             {
                 var user = _unitOfWork.Users.Authenticate(userLogin.UserName, userLogin.Password);
-                response.Data = _mapper.Map<UserDTO>(user);
+                response.Data = _mapper.Map<UserDto>(user);
                 response.IsSuccess = true;
                 response.Message = Messages.AUTHENTICATED;
             }

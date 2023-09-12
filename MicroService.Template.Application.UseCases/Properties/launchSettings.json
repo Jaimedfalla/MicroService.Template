@@ -1,12 +1,12 @@
 {
   "profiles": {
-    "MicroService.Template.Transversal.Mapper": {
+    "MicroService.Template.Application.UseCases": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "https://localhost:49259;http://localhost:49260"
+      "applicationUrl": "https://localhost:49261;http://localhost:49262"
     }
   }
 }

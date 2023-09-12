@@ -30,12 +30,11 @@
   <ItemGroup>
     <ProjectReference Include="..\MicroService.Template.Application.DTO\MicroService.Template.Application.DTO.csproj" />
     <ProjectReference Include="..\MicroService.Template.Application.Interface\MicroService.Template.Application.Interface.csproj" />
-    <ProjectReference Include="..\MicroService.Template.Application.Main\MicroService.Template.Application.Main.csproj" />
+    <ProjectReference Include="..\MicroService.Template.Application.UseCases\MicroService.Template.Application.UseCases.csproj" />
     <ProjectReference Include="..\MicroService.Template.Domain\MicroService.Template.Domain.csproj" />
     <ProjectReference Include="..\MicroService.Template.Persistence\MicroService.Template.Persistence.csproj" />
     <ProjectReference Include="..\MicroService.Template.Transversal.Common\MicroService.Template.Transversal.Common.csproj" />
     <ProjectReference Include="..\MicroService.Template.Transversal.Logging\MicroService.Template.Transversal.Logging.csproj" />
-    <ProjectReference Include="..\MicroService.Template.Transversal.Mapper\MicroService.Template.Transversal.Mapper.csproj" />
   </ItemGroup>
 
 </Project>
